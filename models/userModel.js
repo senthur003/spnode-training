@@ -6,9 +6,10 @@ dotenv.config();
 class Users {
   static async list() {
     try {
-      let query = knex("user");
+      // let query = knex("user");
+      // let results = await query;
+      let query = knex("admin");
       let results = await query;
-
       // let query1 = knex("user").whereNull('phone');
       // let results1 = await query1;
       // if (!results1) {
@@ -64,7 +65,9 @@ class Users {
   }
   static async Delete(req) {
     console.log("model delete", req.params);
-    let query = knex("user").where({ name: req.params.name }).del();
+    // let query = knex("user").where({ name: req.params.name }).del();
+    // await query;
+    let query = knex("admin").where({ name: req.params.name }).del();
     await query;
     return {
       success: true,
