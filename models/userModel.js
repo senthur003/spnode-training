@@ -67,8 +67,9 @@ class Users {
     console.log("model delete", req.params);
     // let query = knex("user").where({ name: req.params.name }).del();
     // await query;
-    let query = knex("admin").where({ name: req.params.name }).del();
+    let query = knex("admin").where({ id: req.params.id }).del();
     await query;
+    console.log(req.params.id);
     return {
       success: true,
       message: "deleted successfully",

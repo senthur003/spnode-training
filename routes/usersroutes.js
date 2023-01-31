@@ -13,7 +13,8 @@ module.exports = () => {
 
   usersroutes.route("/list").get(usercontroller.list);
   usersroutes.route("/adduser").post(usercontroller.adduser);
-  usersroutes.route("/delete/:name").delete(usercontroller.Delete);
+  // usersroutes.route("/delete/:name").delete(usercontroller.Delete);
+  usersroutes.route("/delete/:id").delete(usercontroller.Delete);
   usersroutes.route("/update/").put(usercontroller.Update);
 
   //   usersroutes

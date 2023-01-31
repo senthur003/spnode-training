@@ -2,8 +2,11 @@ const express = require("express");
 const postgres = require("postgres");
 const crypto = require("crypto");
 require("dotenv").config();
+
 const app = express();
 
+const upload = require("./common/uploadMiddleware.js");
+app.use(upload);
 const pg = require("knex")({
   client: "pg",
   connection: process.env.pool,
